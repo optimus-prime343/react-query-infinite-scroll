@@ -4,11 +4,13 @@ import { useInView } from '../../hooks/use-in-view'
 
 import { useMemo } from 'react'
 import { ClipLoader } from 'react-spinners'
+import { FullPageLoader } from '../full-page-loader'
 
 export const Repositories = () => {
   const {
     data: repositoriesPages,
     hasNextPage,
+    isLoading,
     isFetchingNextPage,
     fetchNextPage,
   } = useRepositories()
@@ -27,6 +29,7 @@ export const Repositories = () => {
 
   const isLastRepository = (index: number) => index === totalRepositories - 1
 
+  if (isLoading) return <FullPageLoader />
   return (
     <div className={style.container}>
       <h1 className={style.title}>
