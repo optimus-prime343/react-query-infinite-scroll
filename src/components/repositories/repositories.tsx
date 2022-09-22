@@ -31,7 +31,7 @@ export const Repositories = () => {
         {combinedRepositories.map((combinedRepository, index) => (
           <li
             ref={isLastRepository(index) ? ref : null}
-            key={combinedRepository.id}
+            key={`${combinedRepository.id}-${index}`}
             className={styles.item}
           >
             <a href={combinedRepository.html_url}>{combinedRepository.name}</a>
