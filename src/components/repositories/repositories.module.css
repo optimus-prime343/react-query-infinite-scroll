@@ -39,3 +39,11 @@
   align-items: center;
   margin-top: 1rem;
 }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: initial;
+    margin: 0rem;
+    padding: 1rem;
+  }
+}
