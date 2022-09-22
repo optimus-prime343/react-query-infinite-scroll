@@ -4,7 +4,7 @@ import { axiosClient } from '../utils/axios-client'
 
 export const useRepositories = (searchQuery = 'react') => {
   return useInfiniteQuery(
-    [],
+    ['repositories', searchQuery],
     ({ pageParam = 1 }) =>
       axiosClient
         .get<RepositoryResponse>(
